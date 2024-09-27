@@ -253,6 +253,7 @@ module E = struct
       (pstr_value
          nonrecursive
          (value_binding
+            ~constraint_:drop
             ~pat:
               (alt
                  (Attribute.pattern indexed (pstring __))
@@ -287,6 +288,7 @@ module E = struct
           (pstr_value
              nonrecursive
              (value_binding
+                ~constraint_:drop
                 ~pat:(Attribute.pattern name_suffix (pstring __))
                 ~expr:(pexp_pack __)
               ^:: nil)
